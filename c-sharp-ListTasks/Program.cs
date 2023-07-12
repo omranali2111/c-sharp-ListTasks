@@ -1,15 +1,23 @@
-﻿internal class Program
+﻿using System.ComponentModel;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
-        int[] newArray = new int[10];
-        Console.WriteLine("enter list of numbers:");
-
-        task1(newArray);
+        //int[] newArray = new int[11];
+        List<int> numbers = new List<int>();
+        numbers.Add(1);
+        numbers.Add(2);
+        numbers.Add(3);
+        numbers.Add(4);
+        numbers.Add(5);
+        numbers.Add(5);
+        numbers.Add(4);
+        task1(numbers);
 
     }
 
-    public static void task1(IList<int> newArray)
+    public static void task1(List<int> numbers)
     {
         /*
         1.Write a program that takes a list of integers as input and removes
@@ -17,26 +25,11 @@
             method that accepts the list and returns a new list containing 
             only the unique elements in the original order.
         */
-        int c = newArray.Count;
-        for (int i = 0; i < c; i++)
-        {
-            try
-            {
-                newArray[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-        }
-
-        List<int> numbers = new List<int>();
        
-        foreach (int i in newArray)
-        {
-            numbers.Add(i);
-           
-        }
+
+       
+     
+       
         Console.WriteLine("Original list:");
         foreach (int number in numbers)
         {
@@ -51,6 +44,16 @@
             Console.Write(number + " ");
         }
 
+    }
+    public static void task2()
+    {
+        /*
+        2.Implement a program that takes a list of strings as 
+            input and performs the following operations: Remove
+            all elements that contain a specific character specified
+            by the user. Sort the remaining elements in ascending order.
+            Return the modified list. 
+        */
 
 
 
