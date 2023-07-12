@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Xml.Linq;
@@ -35,7 +36,7 @@ internal class Program
         Console.Write("Enter a character to remove from the list: ");
         char target = Console.ReadLine()[0];
         task2(text, target);
-        */
+        
 
         Console.WriteLine("=============================================");
 
@@ -51,7 +52,18 @@ internal class Program
 
         int maxValue=task3(numbers1);
         Console.WriteLine(maxValue);
-        
+
+        */
+
+
+        Console.WriteLine("=============================================");
+        Console.Write("Enter a sentence: ");
+        string input = Console.ReadLine();
+
+        List<string> reversedWords = task4(input);
+
+        Console.WriteLine("Reversed words: " + string.Join(" ", reversedWords));
+
 
 
 
@@ -117,9 +129,29 @@ internal class Program
         return numbers.Max();
 
 
-       
+
+    }
+    /*
+    4. Write a program that takes a string as an 
+      input and is a sentence.It should return a string
+      with words in reverse order. Input : Hello!!!
+     World.We are awesome.Output: awesome.are We World.Hello!!! 
+    */
+   
+       public static List<string> task4(string sentence)
+        {
+            List<string> words = sentence.Split(' ').ToList();//splits the sentence into an array
+                                                              //of substrings using the space character
+                                                              //converts the array of substrings into a List<string>
+        words.Reverse();
+
+            return words;
     }
 
-
+    /*
+    5. Implement a program that takes a list of strings as input
+        and checks if each string is a palindrome(reads the same forwards and backwards)
+        . Return a new list containing only the palindromic strings.
+    */
 }
 
