@@ -20,7 +20,7 @@ internal class Program
          }
 
             task1(numbers);
-        */
+        
 
         Console.WriteLine("=============================================");
         List<string> text = new List<string>();
@@ -35,6 +35,23 @@ internal class Program
         Console.Write("Enter a character to remove from the list: ");
         char target = Console.ReadLine()[0];
         task2(text, target);
+        */
+
+        Console.WriteLine("=============================================");
+
+        List<int> numbers1 = new List<int>();
+        Console.WriteLine(" Enter 5 numbers ");
+        for (int i = 0; i < 5; i++)
+        {
+
+            int ListInput1 = int.Parse(Console.ReadLine());
+            numbers1.Add(ListInput1);
+
+        }
+
+        int maxValue=task3(numbers1);
+        Console.WriteLine(maxValue);
+        
 
 
 
@@ -48,10 +65,6 @@ internal class Program
             method that accepts the list and returns a new list containing 
             only the unique elements in the original order.
         */
-       
-
-       
-     
        
         Console.WriteLine("Original list:");
         foreach (int number in numbers)
@@ -90,5 +103,23 @@ internal class Program
         return textList;
 
     }
+
+    /*
+    3. Write a program that finds the maximum value 
+        in a list of integers.Implement a method that
+     accepts the list as input and returns the maximum value.
+    */
+
+    public static int task3(List<int> numbers)
+    {
+
+        Console.Write("maximum value in the list is:");
+        return numbers.Max();
+
+
+       
+    }
+
+
 }
 
