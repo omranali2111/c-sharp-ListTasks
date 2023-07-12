@@ -4,16 +4,19 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        //int[] newArray = new int[11];
+       
         List<int> numbers = new List<int>();
-        numbers.Add(1);
-        numbers.Add(2);
-        numbers.Add(3);
-        numbers.Add(4);
-        numbers.Add(5);
-        numbers.Add(5);
-        numbers.Add(4);
-        task1(numbers);
+        Console.WriteLine(" Enter numbers ");
+        for (int i = 0; i < 10; i++)
+        { 
+            
+            int ListInput = int.Parse(Console.ReadLine());
+            numbers.Add(ListInput);
+
+         }
+
+            task1(numbers);
+
 
     }
 
