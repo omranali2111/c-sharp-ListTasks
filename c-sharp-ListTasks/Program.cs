@@ -53,7 +53,7 @@ internal class Program
         int maxValue=task3(numbers1);
         Console.WriteLine(maxValue);
 
-        */
+        
 
 
         Console.WriteLine("=============================================");
@@ -63,6 +63,25 @@ internal class Program
         List<string> reversedWords = task4(input);
 
         Console.WriteLine("Reversed words: " + string.Join(" ", reversedWords));
+        */
+
+        Console.WriteLine("=============================================");
+        List<string> input1 = new List<string>();
+        Console.WriteLine(" Enter String ");
+        for (int i = 0; i < 5; i++)
+        {
+
+            string ListInput = Console.ReadLine();
+            input1.Add(ListInput);
+
+        }
+        List<string> output = task5(input1);
+        Console.WriteLine("Palindromes:");
+        foreach (string palindrome in output)
+        {
+            Console.WriteLine(palindrome);
+        }
+
 
 
 
@@ -146,12 +165,28 @@ internal class Program
         words.Reverse();
 
             return words;
-    }
+        }
 
     /*
     5. Implement a program that takes a list of strings as input
         and checks if each string is a palindrome(reads the same forwards and backwards)
         . Return a new list containing only the palindromic strings.
     */
+
+    public static List<string> task5(List<string> input)
+    {
+        List<string> palindromeList = new List<string>();
+        foreach (string word in input)
+        {
+            if (word.SequenceEqual(word.Reverse()))
+            {
+                palindromeList.Add(word);
+            } 
+        }
+      
+        return palindromeList;
+    }
+
+
 }
 
