@@ -1,9 +1,13 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Xml.Linq;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
+        /*
        
         List<int> numbers = new List<int>();
         Console.WriteLine(" Enter numbers ");
@@ -16,6 +20,22 @@ internal class Program
          }
 
             task1(numbers);
+        */
+
+        Console.WriteLine("=============================================");
+        List<string> text = new List<string>();
+        Console.WriteLine(" Enter String ");
+        for (int i = 0; i < 5; i++)
+        {
+
+            string ListInput = Console.ReadLine();
+            text.Add(ListInput);
+
+        }
+        Console.Write("Enter a character to remove from the list: ");
+        char target = Console.ReadLine()[0];
+        task2(text, target);
+
 
 
     }
@@ -48,7 +68,7 @@ internal class Program
         }
 
     }
-    public static void task2()
+    public static List<string> task2(List<string> textList,char target)
     {
         /*
         2.Implement a program that takes a list of strings as 
@@ -57,8 +77,17 @@ internal class Program
             by the user. Sort the remaining elements in ascending order.
             Return the modified list. 
         */
+        textList.RemoveAll(item => item.Contains(target));
+        textList.Sort();
 
-
+        Console.WriteLine("Modified list:");
+        foreach (string item in textList)
+        {
+            Console.WriteLine(item);
+        }
+        textList.Sort();// Sort the modified list in ascending order
+        Console.WriteLine("the modified list :");
+        return textList;
 
     }
 }
